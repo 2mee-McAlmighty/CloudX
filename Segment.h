@@ -35,10 +35,10 @@ void segmentSetting(char segType,unsigned char segNoDigit, unsigned char *segSca
 
                  segLoader=0;
                    while(segData[segLoader]< 8)
-                          PortMode(segData[segLoader++],OUTPUT);
+                          pinMode(segData[segLoader++],OUTPUT);
                  segLoader=0;
                    while(segScan[segLoader]!=0)
-                          PortMode(segScan[segLoader++],OUTPUT);
+                          pinMode(segScan[segLoader++],OUTPUT);
 
 }
 
@@ -93,7 +93,8 @@ void segClear(){
 
 
 void segmentWrite(unsigned char *segDisp, unsigned long segDel){
-    while(segDel-- !=0){
+  unsigned long delay =((segDel*180)/(1000));
+    while(delay-- !=0){
     char segScanpnter=0, segDatapnter=0,segStore;
         while(segScan[segScanpnter] != 0) {
             segClear();

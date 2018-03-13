@@ -1,4 +1,6 @@
 
+
+  //Sample code
 #define lcd_clear            0x01
 #define return_home      0x02
 #define move_cursor_right   0x14
@@ -18,8 +20,8 @@ char ENN, RSS, D44, D55, D66, D77;
 void lcdSettings(char RSS1,char ENN1,char D441,char D551,char D661,char D771)
 {
     PortMode(RSS1,OUTPUT); PortMode(ENN1,OUTPUT); PortMode(D441,OUTPUT); PortMode(D551,OUTPUT); PortMode(D661,OUTPUT); PortMode(D771,OUTPUT);
-    PORT1=0;
-   RSS = RSS1; ENN= ENN1;  D44= D441; D55=D551; D66=D661; D77=D771;
+    port1=0;
+    RSS = RSS1; ENN= ENN1;  D44= D441; D55=D551; D66=D661; D77=D771;
     
    }
 #define RS RSS
